@@ -125,9 +125,14 @@ except:
     print("Unable to connect to the router.")
 ````
 
+Also add a line in the end of the document to close the connection:
+```python
+m.close_session()
+```
+
 ## 11. Create your first filter
 ```python
-netconf_filter_hostname = """
+netconf_filter = """
 <filter>
 <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
 <hostname/>
@@ -136,3 +141,23 @@ netconf_filter_hostname = """
 """
 ```
 
+## 12. Let's use the filter!
+```python
+netconf_reply = m.get_config(source = 'running', filter = netconf_filter).data_xml
+```
+
+## 13. Making dictionary out of the response
+```python
+netconf_reply_dict = json.loads(json.dumps(xmltodict.parse(netconf_reply)))
+```
+
+## 14. Review the output in pretty JSON
+```python
+print(json.dumps(netconf_reply_dict, indent=4, sort_keys=True))
+```
+
+## 15. Access the hostname in the response
+```python
+hostname = netconf_reply_hostname_dict["data"]["native"]["hostname"]
+print(hostname)
+```
