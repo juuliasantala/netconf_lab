@@ -7,7 +7,9 @@ git clone https://github.com/YangModels/yang
 ## 2. Using pyang to check review YANG models:
 pyang -f tree --ignore-errors --tree-path *YANG-model*
 
+
 ------------------------------
+
 
 ## 3. NETCONF to the router
 ssh *username*@*router-IP* -p 830
@@ -71,4 +73,29 @@ ssh *username*@*router-IP* -p 830
 ## 8. Remember to close the session
 ```
 <?xml version="1.0" encoding="UTF-8"?> <rpc message-id="1239123" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0"> <close-session /> </rpc> ]]>]]>
+```
 
+
+------------------------------
+
+
+## 9. Start Python code by defining the libraries
+```python
+from ncclient import manager
+import xmltodict
+import json
+```
+
+## 10. Create the NETCONF connection over SSH
+````python
+try:
+    m = manager.connect(
+        host={{host_IP}},
+        port={{netconf_port}},
+        username={{username}},
+        password={{password}},
+        hostkey_verify=False
+        )
+except:
+    print("Unable to connect to the router.")
+````
