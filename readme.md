@@ -17,26 +17,26 @@ ssh *username*@*router-IP* -p 830
 ## 4. NETCONF Hello message
 ```
 <?xml version="1.0" encoding="UTF-8"?>
-    <hello xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
-        <capabilities>
-            <capability>
-                urn:ietf:params:netconf:base:1.0
-            </capability>
-        </capabilities>
-    </hello>]]>]]>
+<hello xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+<capabilities>
+<capability>
+urn:ietf:params:netconf:base:1.0
+</capability>
+</capabilities>
+</hello>]]>]]>
 ```
 
 ## 5. Vendor definition: Check hostname
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <rpc message-id="101" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
-  <get>
-    <filter>
-      <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
-		<hostname/>
-      </native>
-    </filter>
-  </get>
+<get>
+<filter>
+<native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+<hostname/>
+</native>
+</filter>
+</get>
 </rpc>]]>]]>
 ```
 
@@ -45,12 +45,12 @@ ssh *username*@*router-IP* -p 830
 <?xml version="1.0" encoding="UTF-8"?>
 <rpc message-id="101" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
 <get>
-    <filter>
-      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
-		<interface></interface>
+<filter>
+<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+<interface></interface>
 </interfaces> 
 </filter>
-  </get>
+</get>
 </rpc>]]>]]>
 ```
 
@@ -58,21 +58,25 @@ ssh *username*@*router-IP* -p 830
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <rpc message-id="101" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0"> 
-   <edit-config>
-      <target>
-         <running/>
-      </target>
-    <config>
-            <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
-                <hostname>Netconf_switch</hostname>
-            </native>
-    </config>
-   </edit-config>
+<edit-config>
+<target>
+<running/>
+</target>
+<config>
+<native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+<hostname>Netconf_switch</hostname>
+</native>
+</config>
+</edit-config>
 </rpc>]]>]]>
 ```
+
 ## 8. Remember to close the session
 ```
-<?xml version="1.0" encoding="UTF-8"?> <rpc message-id="1239123" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0"> <close-session /> </rpc> ]]>]]>
+<?xml version="1.0" encoding="UTF-8"?> 
+<rpc message-id="1239123" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0"> 
+<close-session /> 
+</rpc> ]]>]]>
 ```
 
 
@@ -99,3 +103,15 @@ try:
 except:
     print("Unable to connect to the router.")
 ````
+
+## 11. Create your first filter
+```python
+netconf_filter_hostname = """
+<filter>
+<native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+<hostname/>
+</native>
+</filter>
+"""
+```
+
