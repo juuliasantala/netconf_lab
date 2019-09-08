@@ -13,7 +13,7 @@ pyang -f tree --ignore-errors --tree-path <i>YANG-model</i>
 ssh <i>username</i>@<i>router-IP</i> -p 830
 
 <h2>4. NETCONF Hello message</h2>
-
+'''
 <?xml version="1.0" encoding="UTF-8"?>
     <hello xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
         <capabilities>
@@ -22,9 +22,9 @@ ssh <i>username</i>@<i>router-IP</i> -p 830
             </capability>
         </capabilities>
     </hello>]]>]]>
-
+'''
 <h2>5. Vendor definition: Check hostname</h2>
-
+'''
 <?xml version="1.0" encoding="UTF-8"?>
 <rpc message-id="101" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
   <get>
@@ -35,9 +35,9 @@ ssh <i>username</i>@<i>router-IP</i> -p 830
     </filter>
   </get>
 </rpc>]]>]]>
-
+'''
 <h2>6. Industry standard: Get interfaces</h2>
-
+'''
 <?xml version="1.0" encoding="UTF-8"?>
 <rpc message-id="101" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
 <get>
@@ -48,8 +48,9 @@ ssh <i>username</i>@<i>router-IP</i> -p 830
 </filter>
   </get>
 </rpc>]]>]]>
-
+'''
 <h2>7. Let's change the hostname!</h2>
+'''
 <?xml version="1.0" encoding="UTF-8"?>
 <rpc message-id="101" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0"> 
    <edit-config>
@@ -63,7 +64,8 @@ ssh <i>username</i>@<i>router-IP</i> -p 830
     </config>
    </edit-config>
 </rpc>]]>]]>
-
+'''
 <h2>8. Remember to close the session</h2>
-
+'''
 <?xml version="1.0" encoding="UTF-8"?> <rpc message-id="1239123" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0"> <close-session /> </rpc> ]]>]]>
+'''
