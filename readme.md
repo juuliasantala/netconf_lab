@@ -40,6 +40,27 @@ urn:ietf:params:netconf:base:1.0
 </rpc>]]>]]>
 ```
 
+or
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc message-id="101" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+<get-config>
+<source>
+<running/>
+</source>
+
+<filter>
+<native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+<hostname/>
+</native>
+</filter>
+</get-config>
+</rpc>]]>]]>
+
+```
+
+
 ## 6. Industry standard: Get interfaces
 ```
 <?xml version="1.0" encoding="UTF-8"?>
