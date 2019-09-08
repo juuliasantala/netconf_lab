@@ -1,18 +1,18 @@
-<h1>Netconf_lab</h1>
-<p>DevNet Partner University, 10th - 11th September 2019</p>
+# Netconf_lab
+DevNet Partner University, 10th - 11th September 2019
 
-<h2>1. Cloning the YANG models:</h2>
+## 1. Cloning the YANG models:
 git clone https://github.com/YangModels/yang
 
-<h2>2. Using pyang to check review YANG models:</h2>
-pyang -f tree --ignore-errors --tree-path <i>YANG-model</i>
+## 2. Using pyang to check review YANG models:
+pyang -f tree --ignore-errors --tree-path *YANG-model*
 
-<hr>
+------------------------------
 
-<h2>3. NETCONF to the router</h2>
-ssh <i>username</i>@<i>router-IP</i> -p 830
+## 3. NETCONF to the router
+ssh *username*@*router-IP* -p 830
 
-<h2>4. NETCONF Hello message</h2>
+## 4. NETCONF Hello message
 ```
 <?xml version="1.0" encoding="UTF-8"?>
     <hello xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
@@ -23,7 +23,8 @@ ssh <i>username</i>@<i>router-IP</i> -p 830
         </capabilities>
     </hello>]]>]]>
 ```
-<h2>5. Vendor definition: Check hostname</h2>
+
+## 5. Vendor definition: Check hostname
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <rpc message-id="101" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
@@ -36,7 +37,8 @@ ssh <i>username</i>@<i>router-IP</i> -p 830
   </get>
 </rpc>]]>]]>
 ```
-<h2>6. Industry standard: Get interfaces</h2>
+
+## 6. Industry standard: Get interfaces
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <rpc message-id="101" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
@@ -49,7 +51,8 @@ ssh <i>username</i>@<i>router-IP</i> -p 830
   </get>
 </rpc>]]>]]>
 ```
-<h2>7. Let's change the hostname!</h2>
+
+## 7. Let's change the hostname!
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <rpc message-id="101" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0"> 
@@ -65,7 +68,7 @@ ssh <i>username</i>@<i>router-IP</i> -p 830
    </edit-config>
 </rpc>]]>]]>
 ```
-<h2>8. Remember to close the session</h2>
+## 8. Remember to close the session
 ```
 <?xml version="1.0" encoding="UTF-8"?> <rpc message-id="1239123" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0"> <close-session /> </rpc> ]]>]]>
 
