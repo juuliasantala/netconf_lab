@@ -1,6 +1,12 @@
 # Netconf_lab
 DevNet Partner University, 10th - 11th September 2019
 
+## Before we start...
+You need
+- Python 3
+- The following Python libraries:
+***ncclient, xmltodict, json, pyang***
+
 ## 1. Cloning the YANG models:
 git clone https://github.com/YangModels/yang
 
@@ -74,6 +80,7 @@ or
 </get>
 </rpc>]]>]]>
 ```
+
 
 ## 7. Let's change the hostname!
 ```
