@@ -161,3 +161,5 @@ print(json.dumps(netconf_reply_dict, indent=4, sort_keys=True))
 hostname = netconf_reply_hostname_dict["data"]["native"]["hostname"]
 print(hostname)
 ```
+
+### 16. Now that we know how you can use NETCONF in your Python code, let's create a code that tells us if an interface on the device is down.
