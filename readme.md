@@ -165,7 +165,7 @@ print(json.dumps(netconf_reply_dict, indent=4, sort_keys=True))
 
 ## 15. Access the hostname in the response
 ```python
-hostname = netconf_reply_hostname_dict["data"]["native"]["hostname"]
+hostname = netconf_reply_dict["data"]["native"]["hostname"]
 print(hostname)
 ```
 
