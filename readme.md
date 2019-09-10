@@ -7,6 +7,8 @@ You need
 - The following Python libraries:
 ***ncclient, xmltodict, json, pyang***
 
+Do you have an editor to work on Python? If not, for example Sublime Text is nice and simple editor: https://www.sublimetext.com/
+
 ## 1. Cloning the YANG models:
 git clone https://github.com/YangModels/yang
 
