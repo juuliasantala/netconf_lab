@@ -6,6 +6,7 @@ You need
 - Python 3 (Don't have Python 3? https://realpython.com/installing-python/)
 - The following Python libraries:
 ***ncclient, xmltodict, json, pyang***
+(Windows and pip3 not installed? https://phoenixnap.com/kb/install-pip-windows)
 
 Do you have an editor to work on Python? If not, for example Sublime Text is nice and simple editor: https://www.sublimetext.com/
 
