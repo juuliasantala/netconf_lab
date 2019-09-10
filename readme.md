@@ -3,7 +3,7 @@ DevNet Partner University, 10th - 11th September 2019
 
 ## Before we start...
 You need
-- Python 3
+- Python 3 (Don't have Python 3? https://realpython.com/installing-python/)
 - The following Python libraries:
 ***ncclient, xmltodict, json, pyang***
 
